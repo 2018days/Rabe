@@ -1,0 +1,1910 @@
+<html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我们眼中的拉贝，我们眼中的远方 | 音视频板块集</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 引入QRCode生成库 -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+    
+    <!-- Tailwind 配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6B46C1', // 深紫色主色调，传达历史厚重感
+                        secondary: '#D69E2E', // 金色辅助色，象征希望与历史价值
+                        dark: '#2D3748',
+                        light: '#F7FAFC',
+                    },
+                    fontFamily: {
+                        serif: ['Georgia', 'Cambria', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .media-card-shadow {
+                box-shadow: 0 10px 25px -5px rgba(107, 70, 193, 0.1), 0 8px 10px -6px rgba(107, 70, 193, 0.05);
+            }
+            .media-card-shadow-hover {
+                box-shadow: 0 20px 25px -5px rgba(107, 70, 193, 0.15), 0 10px 10px -5px rgba(107, 70, 193, 0.1);
+            }
+            .gradient-bg {
+                background: linear-gradient(135deg, var(--tw-gradient-stops));
+            }
+            .wave-animation {
+                animation: wave 1.5s infinite ease-in-out;
+            }
+            @keyframes wave {
+                0%, 100% { transform: scaleY(0.3); }
+                50% { transform: scaleY(1); }
+            }
+            .bg-blur {
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+            }
+            .sketch-pattern {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%236B46C1' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            }
+            /* 拉贝人物线条背景 */
+            .rabe-silhouette {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 600'%3E%3Cpath d='M200,100 C250,120 280,180 280,250 C280,320 250,380 200,400 C150,380 120,320 120,250 C120,180 150,120 200,100 Z' fill='none' stroke='%236B46C1' stroke-width='1' opacity='0.15'/%3E%3Cpath d='M200,250 L200,450' stroke='%236B46C1' stroke-width='1' opacity='0.15'/%3E%3Cpath d='M120,350 L280,350' stroke='%236B46C1' stroke-width='1' opacity='0.15'/%3E%3Ccircle cx='200' cy='180' r='30' fill='none' stroke='%236B46C1' stroke-width='1' opacity='0.2'/%3E%3C/svg%3E");
+                background-repeat: repeat;
+                background-size: 400px 600px;
+            }
+            .qrcode-container {
+                position: relative;
+                display: inline-block;
+            }
+            .qrcode-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(255, 255, 255, 0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 0.5rem;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                pointer-events: none;
+            }
+            .qrcode-container:hover .qrcode-overlay {
+                opacity: 1;
+                pointer-events: auto;
+            }
+            /* 按钮脉冲动画 */
+            @keyframes pulse {
+                0% {
+                    box-shadow: 0 0 0 0 rgba(107, 70, 193, 0.4);
+                }
+                70% {
+                    box-shadow: 0 0 0 10px rgba(107, 70, 193, 0);
+                }
+                100% {
+                    box-shadow: 0 0 0 0 rgba(107, 70, 193, 0);
+                }
+            }
+            .pulse-animation {
+                animation: pulse 2s infinite;
+            }
+            /* 视频缩略图悬停效果 */
+            .video-thumbnail {
+                position: relative;
+                overflow: hidden;
+            }
+            .video-thumbnail:hover .play-overlay {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+            .play-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(107, 70, 193, 0.7);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transition: all 0.3s ease;
+                transform: scale(0.9);
+            }
+            /* 视频播放器容器样式 */
+            .video-player-container {
+                position: relative;
+                width: 100%;
+                background-color: #000;
+                border-radius: 0.5rem 0.5rem 0 0;
+                overflow: hidden;
+            }
+            /* 视频加载占位符 */
+            .video-placeholder {
+                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                animation: placeholder-loading 1.5s infinite;
+            }
+            @keyframes placeholder-loading {
+                0% { background-position: -200% 0; }
+                100% { background-position: 200% 0; }
+            }
+            /* 加载指示器 */
+            .loader {
+                border-top-color: #6B46C1;
+                animation: spinner 0.6s linear infinite;
+            }
+            @keyframes spinner {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+            /* 通知提示 */
+            .toast {
+                transform: translateY(-100px);
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+            .toast.show {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-dark antialiased min-h-screen sketch-pattern">
+    <!-- 拉贝人物线条背景层 -->
+    <div class="fixed inset-0 z-0 rabe-silhouette"></div>
+    
+    <!-- 半透明覆盖层使内容更清晰 -->
+    <div class="fixed inset-0 z-0 bg-light/80"></div>
+
+    <!-- 顶部导航 -->
+    <header class="fixed top-0 left-0 right-0 bg-white/80 bg-blur z-50 transition-all duration-300 shadow-sm" id="header">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-history text-primary text-2xl"></i>
+                <h1 class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">我们眼中的拉贝，我们眼中的远方</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="container mx-auto px-4 pt-24 pb-16 relative z-10">
+        <!-- 引入提示 -->
+        <div class="mb-6 bg-blue-50 border-l-4 border-primary p-4 rounded-r-lg">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <i class="fa fa-info-circle text-primary"></i>
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm text-blue-700">为获得最佳体验，请在本地服务器环境中运行此页面。在本地文件模式下部分功能可能受限。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 介绍卡片 -->
+        <div class="mb-12 bg-white/90 bg-blur rounded-2xl p-6 sm:p-8 shadow-lg border border-white/50">
+            <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4 font-serif">历史的回响，心灵的远方</h2>
+            <p class="text-gray-600 text-lg mb-6 max-w-2xl">
+                这里是关于拉贝与远方的音视频记忆收集。上传与拉贝相关的历史叙述、对"远方"的思考与感悟，
+                让声音和影像承载记忆，让思想跨越时空。点击每个板块即可观看或聆听，上下滑动探索更多内容。
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <button id="introAddAudioBtn" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full flex items-center space-x-2 transition-all duration-300 shadow-md hover:shadow-lg">
+                    <i class="fa fa-microphone"></i>
+                    <span>添加音频记录</span>
+                </button>
+                <button id="introAddVideoBtn" class="bg-secondary hover:bg-secondary/90 text-white px-6 py-3 rounded-full flex items-center space-x-2 transition-all duration-300 shadow-md hover:shadow-lg">
+                    <i class="fa fa-video-camera"></i>
+                    <span>添加视频记录</span>
+                </button>
+                <button id="infoBtn" class="bg-white/70 hover:bg-white text-primary border border-primary/30 px-6 py-3 rounded-full flex items-center space-x-2 transition-all duration-300">
+                    <i class="fa fa-info-circle"></i>
+                    <span>展览信息</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 音频板块 -->
+        <section class="mb-16">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold font-serif flex items-center">
+                    <i class="fa fa-volume-up text-primary mr-2"></i>
+                    音频记录
+                </h2>
+                <button id="addAudioBtn" class="text-primary hover:text-primary/80 transition-colors flex items-center">
+                    <i class="fa fa-plus-circle mr-1"></i>
+                    <span>添加音频</span>
+                </button>
+            </div>
+            
+            <!-- 音频板块容器 -->
+            <div id="audioCardsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-6">
+                <!-- 音频板块会通过JavaScript动态添加到这里 -->
+            </div>
+            
+            <!-- 音频空状态提示 -->
+            <div id="audioEmptyState" class="flex flex-col items-center justify-center py-20 text-center bg-white/90 bg-blur rounded-2xl shadow-lg border border-white/50 p-6">
+                <div class="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                    <i class="fa fa-microphone text-primary text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 font-serif">还没有音频记录</h3>
+                <p class="text-gray-500 mb-6 max-w-md">
+                    点击"添加音频记录"按钮，开始分享你的声音与思考
+                </p>
+            </div>
+        </section>
+
+        <!-- 视频板块 -->
+        <section class="mb-16">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold font-serif flex items-center">
+                    <i class="fa fa-film text-secondary mr-2"></i>
+                    视频记录
+                </h2>
+                <button id="addVideoBtn" class="text-secondary hover:text-secondary/80 transition-colors flex items-center">
+                    <i class="fa fa-plus-circle mr-1"></i>
+                    <span>添加视频</span>
+                </button>
+            </div>
+            
+            <!-- 视频板块容器 -->
+            <div id="videoCardsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-6">
+                <!-- 视频板块会通过JavaScript动态添加到这里 -->
+            </div>
+            
+            <!-- 视频空状态提示 -->
+            <div id="videoEmptyState" class="flex flex-col items-center justify-center py-20 text-center bg-white/90 bg-blur rounded-2xl shadow-lg border border-white/50 p-6">
+                <div class="w-24 h-24 bg-secondary/10 rounded-full flex items-center justify-center mb-6">
+                    <i class="fa fa-video-camera text-secondary text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 font-serif">还没有视频记录</h3>
+                <p class="text-gray-500 mb-6 max-w-md">
+                    点击"添加视频记录"按钮，开始分享你的影像与思考
+                </p>
+            </div>
+        </section>
+
+        <!-- 移动端上传二维码板块 -->
+        <div class="mb-12 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-6 sm:p-8 shadow-lg border border-primary/10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl font-bold mb-4 font-serif">手机上传你的声音、影像与文字</h2>
+                    <p class="text-gray-600 mb-6">
+                        扫描右侧二维码，在手机上直接上传你的录音、视频与文字，分享你对拉贝的理解和对"远方"的思考。
+                        所有内容将同步展示在本页面，成为集体记忆的一部分。
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                            <span>录制语音或视频分享你的观点</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                            <span>书写文字表达你的思考</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                            <span>上传后自动同步到展示区</span>
+                        </li>
+                    </ul>
+                    <button class="hidden md:flex bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full items-center space-x-2 transition-all duration-300 shadow-md hover:shadow-lg">
+                        <i class="fa fa-mobile text-xl"></i>
+                        <span>在手机上打开</span>
+                    </button>
+                </div>
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="qrcode-container bg-white p-4 rounded-lg shadow-md">
+                        <!-- 二维码将通过JavaScript生成 -->
+                        <div id="uploadQrcode" class="w-64 h-64"></div>
+                        <div class="qrcode-overlay">
+                            <div class="text-center p-4">
+                                <i class="fa fa-qrcode text-4xl text-primary mb-2"></i>
+                                <p class="font-medium">扫描二维码</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 底部信息 -->
+    <footer class="bg-dark/90 text-white py-8 relative z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa fa-history text-primary text-xl"></i>
+                        <span class="font-bold">我们眼中的拉贝，我们眼中的远方</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mt-2">历史记忆与人文思考的音视频收集</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa fa-info-circle text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 text-center text-gray-400 text-sm">© 2025 朴阅书店拉贝展览 | 记录历史，思考未来</div>
+        </div>
+    </footer>
+
+    <!-- 音频上传模态框 -->
+    <div id="audioUploadModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white rounded-2xl w-full max-w-md mx-4 transform scale-95 transition-transform duration-300" id="audioModalContent">
+            <div class="p-6 border-b">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-xl font-bold font-serif">添加音频记录</h3>
+                    <button class="closeModal text-gray-500 hover:text-gray-700 transition-colors">
+                        <i class="fa fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="p-6">
+                <form id="audioUploadForm" class="space-y-4">
+                    <div>
+                        <label for="audioTitle" class="block text-sm font-medium text-gray-700 mb-1">标题</label>
+                        <input type="text" id="audioTitle" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="例如：拉贝日记选读、我心中的远方" required="">
+                    </div>
+                    <div>
+                        <label for="audioDescription" class="block text-sm font-medium text-gray-700 mb-1">描述（可选）</label>
+                        <textarea id="audioDescription" rows="2" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="简要描述这段音频的内容或意义"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">音频文件</label>
+                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-primary transition-colors cursor-pointer" id="audioDropArea">
+                            <input type="file" id="audioFile" accept="audio/*" class="hidden">
+                            <i class="fa fa-cloud-upload text-3xl text-gray-400 mb-2"></i>
+                            <p class="text-gray-500">拖放音频文件到这里，或<span class="text-primary font-medium">点击上传</span></p>
+                            <p class="text-xs text-gray-400 mt-2">支持 MP3, WAV, OGG 等格式</p>
+                        </div>
+                    </div>
+                    <div class="pt-2">
+                        <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg transition-all duration-300 font-medium flex items-center justify-center">
+                            <i class="fa fa-save mr-2"></i>保存音频记录
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 视频上传模态框 -->
+    <div id="videoUploadModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white rounded-2xl w-full max-w-md mx-4 transform scale-95 transition-transform duration-300" id="videoModalContent">
+            <div class="p-6 border-b">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-xl font-bold font-serif">添加视频记录</h3>
+                    <button class="closeModal text-gray-500 hover:text-gray-700 transition-colors">
+                        <i class="fa fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="p-6">
+                <form id="videoUploadForm" class="space-y-4">
+                    <div>
+                        <label for="videoTitle" class="block text-sm font-medium text-gray-700 mb-1">标题</label>
+                        <input type="text" id="videoTitle" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-secondary transition-all" placeholder="例如：拉贝故居探访、我对和平的思考" required="">
+                    </div>
+                    <div>
+                        <label for="videoDescription" class="block text-sm font-medium text-gray-700 mb-1">描述（可选）</label>
+                        <textarea id="videoDescription" rows="2" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-secondary transition-all" placeholder="简要描述这段视频的内容或意义"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">视频文件</label>
+                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-secondary transition-colors cursor-pointer" id="videoDropArea">
+                            <input type="file" id="videoFile" accept="video/*" class="hidden">
+                            <i class="fa fa-cloud-upload text-3xl text-gray-400 mb-2"></i>
+                            <p class="text-gray-500">拖放视频文件到这里，或<span class="text-secondary font-medium">点击上传</span></p>
+                            <p class="text-xs text-gray-400 mt-2">支持 MP4, WebM, MOV 等格式</p>
+                        </div>
+                    </div>
+                    <div class="pt-2">
+                        <button type="submit" class="w-full bg-secondary hover:bg-secondary/90 text-white py-3 rounded-lg transition-all duration-300 font-medium flex items-center justify-center">
+                            <i class="fa fa-save mr-2"></i>保存视频记录
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 信息模态框 -->
+    <div id="infoModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white rounded-2xl w-full max-w-2xl mx-4 transform scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto" id="infoModalContent">
+            <div class="p-6 border-b">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-xl font-bold font-serif">约翰·拉贝主题展览信息</h3>
+                    <button id="closeInfoModal" class="text-gray-500 hover:text-gray-700 transition-colors">
+                        <i class="fa fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="prose max-w-none">
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        为纪念约翰·拉贝的人道主义精神与历史贡献，江苏人民出版社携手南京大学“拉贝日记与和平城市”团队及朴阅书店，共同策划举办“约翰·拉贝”主题展览，展览开展时间为9月2日，持续到10月8日国庆节结束。
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        展览以图文、档案、影像及多媒体互动为载体，立体呈现拉贝从汉堡到南京的生命轨迹。1937年南京大屠杀期间，拉贝以南京安全区国际委员会主席身份，设立庇护所拯救约25万中国平民，并以《拉贝日记》详实记录日军暴行，成为研究这段历史的关键证据。
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        展品包括珍贵日记手稿、历史照片、安全区模型及数字化互动装置，带领观众穿越时空，感受“生命的守护者”在黑暗中的光芒。展览不仅回顾拉贝的英勇事迹，更聚焦其精神对当下的启示——通过铭记历史，守护和平记忆，让拉贝精神成为跨越国界的人类共同财富。
+                    </p>
+                </div>
+                <div class="mt-6 pt-6 border-t border-gray-100">
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <i class="fa fa-calendar text-primary mr-2"></i>
+                            <span class="text-gray-700">9月2日 - 10月7日</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa fa-map-marker text-primary mr-2"></i>
+                            <span class="text-gray-700">朴阅书店</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 移动端上传页面 (默认隐藏) -->
+    <div id="mobileUploadPage" class="fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl font-bold font-serif">上传你的记录</h2>
+                <button id="closeMobileUpload" class="text-gray-500 hover:text-gray-700">
+                    <i class="fa fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <div class="mb-6">
+                <div class="flex border rounded-lg overflow-hidden">
+                    <button id="mobileAudioTab" class="flex-1 py-3 px-4 bg-primary text-white font-medium">音频</button>
+                    <button id="mobileVideoTab" class="flex-1 py-3 px-4 bg-gray-100 text-gray-600 font-medium">视频</button>
+                </div>
+            </div>
+            
+            <form id="mobileAudioForm" class="space-y-6">
+                <div>
+                    <label for="mobileAudioTitle" class="block text-sm font-medium text-gray-700 mb-1">标题</label>
+                    <input type="text" id="mobileAudioTitle" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="为你的记录起个标题" required="">
+                </div>
+                
+                <div>
+                    <label for="mobileAudioText" class="block text-sm font-medium text-gray-700 mb-1">文字内容（可选）</label>
+                    <textarea id="mobileAudioText" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="分享你的思考和感悟..."></textarea>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-3">音频录制</label>
+                    <div class="flex justify-center">
+                        <button type="button" id="startRecording" class="w-20 h-20 rounded-full bg-primary text-white flex items-center justify-center shadow-lg hover:bg-primary/90 transition-all">
+                            <i class="fa fa-microphone text-3xl"></i>
+                        </button>
+                    </div>
+                    <div id="recordingStatus" class="text-center mt-4 text-gray-500 hidden">
+                        <p>正在录制... 点击停止</p>
+                    </div>
+                    <div id="recordingPreview" class="mt-4 hidden">
+                        <p class="text-sm text-gray-700 mb-2">录音预览</p>
+                        <audio id="recordingPlayer" controls="" class="w-full"></audio>
+                    </div>
+                </div>
+                
+                <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg transition-all duration-300 font-medium flex items-center justify-center">
+                    <i class="fa fa-save mr-2"></i>提交音频记录
+                </button>
+            </form>
+            
+            <form id="mobileVideoForm" class="space-y-6 hidden">
+                <div>
+                    <label for="mobileVideoTitle" class="block text-sm font-medium text-gray-700 mb-1">标题</label>
+                    <input type="text" id="mobileVideoTitle" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-secondary transition-all" placeholder="为你的记录起个标题" required="">
+                </div>
+                
+                <div>
+                    <label for="mobileVideoText" class="block text-sm font-medium text-gray-700 mb-1">文字内容（可选）</label>
+                    <textarea id="mobileVideoText" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-secondary transition-all" placeholder="分享你的思考和感悟..."></textarea>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-3">视频上传</label>
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-secondary transition-colors cursor-pointer" id="mobileVideoDropArea">
+                        <input type="file" id="mobileVideoFile" accept="video/*" class="hidden">
+                        <i class="fa fa-video-camera text-3xl text-gray-400 mb-2"></i>
+                        <p class="text-gray-500">点击上传视频文件</p>
+                        <p class="text-xs text-gray-400 mt-2">支持 MP4, WebM, MOV 等格式</p>
+                    </div>
+                </div>
+                
+                <button type="submit" class="w-full bg-secondary hover:bg-secondary/90 text-white py-3 rounded-lg transition-all duration-300 font-medium flex items-center justify-center">
+                    <i class="fa fa-save mr-2"></i>提交视频记录
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 加载指示器 -->
+    <div id="loadingIndicator" class="fixed inset-0 z-50 flex items-center justify-center bg-black/30 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="w-16 h-16 rounded-full border-4 border-gray-200 loader"></div>
+    </div>
+
+    <!-- 通知提示 -->
+    <div id="toastNotification" class="fixed top-4 right-4 z-50 bg-dark text-white px-6 py-3 rounded-lg shadow-lg toast max-w-xs">
+        <p id="toastMessage">操作成功</p>
+    </div>
+
+    <script>
+        // 全局变量
+        let audioElements = {}; // 存储所有音频元素
+        let videoElements = {}; // 存储所有视频元素
+        let videoFiles = {}; // 存储原始视频文件
+        let currentPlayingId = null; // 当前播放的音视频ID
+        let currentMediaType = null; // 当前播放的媒体类型 (audio/video)
+        let mediaRecorder = null;
+        let recordingBlob = null;
+        let isLocalFile = false; // 是否在本地文件模式下运行
+
+        // DOM 元素
+        const audioCardsContainer = document.getElementById('audioCardsContainer');
+        const videoCardsContainer = document.getElementById('videoCardsContainer');
+        const audioEmptyState = document.getElementById('audioEmptyState');
+        const videoEmptyState = document.getElementById('videoEmptyState');
+        const audioUploadModal = document.getElementById('audioUploadModal');
+        const videoUploadModal = document.getElementById('videoUploadModal');
+        const closeModalButtons = document.querySelectorAll('.closeModal');
+        const introAddAudioBtn = document.getElementById('introAddAudioBtn');
+        const introAddVideoBtn = document.getElementById('introAddVideoBtn');
+        const addAudioBtn = document.getElementById('addAudioBtn');
+        const addVideoBtn = document.getElementById('addVideoBtn');
+        const infoBtn = document.getElementById('infoBtn');
+        const infoModal = document.getElementById('infoModal');
+        const infoModalContent = document.getElementById('infoModalContent');
+        const closeInfoModal = document.getElementById('closeInfoModal');
+        const audioUploadForm = document.getElementById('audioUploadForm');
+        const videoUploadForm = document.getElementById('videoUploadForm');
+        const audioDropArea = document.getElementById('audioDropArea');
+        const videoDropArea = document.getElementById('videoDropArea');
+        const audioFileInput = document.getElementById('audioFile');
+        const videoFileInput = document.getElementById('videoFile');
+        const header = document.getElementById('header');
+        const uploadQrcode = document.getElementById('uploadQrcode');
+        const mobileUploadPage = document.getElementById('mobileUploadPage');
+        const closeMobileUpload = document.getElementById('closeMobileUpload');
+        const startRecording = document.getElementById('startRecording');
+        const recordingStatus = document.getElementById('recordingStatus');
+        const recordingPreview = document.getElementById('recordingPreview');
+        const recordingPlayer = document.getElementById('recordingPlayer');
+        const mobileAudioForm = document.getElementById('mobileAudioForm');
+        const mobileVideoForm = document.getElementById('mobileVideoForm');
+        const mobileAudioTab = document.getElementById('mobileAudioTab');
+        const mobileVideoTab = document.getElementById('mobileVideoTab');
+        const mobileVideoDropArea = document.getElementById('mobileVideoDropArea');
+        const mobileVideoFile = document.getElementById('mobileVideoFile');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const toastNotification = document.getElementById('toastNotification');
+        const toastMessage = document.getElementById('toastMessage');
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            // 检测是否在本地文件模式下运行
+            checkIfLocalFile();
+            
+            // 生成二维码
+            generateQrcode();
+            
+            // 从本地存储加载音视频卡片
+            loadAudioCards();
+            loadVideoCards();
+            
+            // 事件监听
+            setupEventListeners();
+            
+            // 检查本地存储是否可用
+            checkLocalStorageAvailability();
+        });
+
+        // 检查是否在本地文件模式下运行
+        function checkIfLocalFile() {
+            isLocalFile = window.location.protocol === 'file:';
+            if (isLocalFile) {
+                showToast('注意：在本地文件模式下部分功能可能受限，建议使用本地服务器运行');
+            }
+        }
+
+        // 检查本地存储是否可用
+        function checkLocalStorageAvailability() {
+            try {
+                const testKey = 'rabe_exhibition_test';
+                localStorage.setItem(testKey, testKey);
+                localStorage.removeItem(testKey);
+                return true;
+            } catch (e) {
+                showToast('本地存储不可用，您的数据可能无法保存', 'error');
+                console.error('LocalStorage is unavailable:', e);
+                return false;
+            }
+        }
+
+        // 显示通知提示
+        function showToast(message, type = 'info') {
+            toastMessage.textContent = message;
+            
+            // 设置不同类型的样式
+            toastNotification.className = 'fixed top-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg toast max-w-xs';
+            if (type === 'error') {
+                toastNotification.classList.add('bg-red-600', 'text-white');
+            } else if (type === 'success') {
+                toastNotification.classList.add('bg-green-600', 'text-white');
+            } else {
+                toastNotification.classList.add('bg-dark', 'text-white');
+            }
+            
+            toastNotification.classList.add('show');
+            
+            // 3秒后隐藏
+            setTimeout(() => {
+                toastNotification.classList.remove('show');
+            }, 3000);
+        }
+
+        // 显示加载指示器
+        function showLoading() {
+            loadingIndicator.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        // 隐藏加载指示器
+        function hideLoading() {
+            loadingIndicator.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        // 生成二维码 - 使用指定的URL
+        function generateQrcode() {
+            // 使用用户提供的URL生成二维码
+            const uploadUrl = "https://deepseek.idoxu.com/nicecolaboy/userv3.html";
+            
+            QRCode.toCanvas(uploadUrl, {
+                width: 256,
+                margin: 1,
+                color: {
+                    dark: "#6B46C1", // 主色调
+                    light: "#ffffff"
+                }
+            }, function(error, canvas) {
+                if (error) {
+                    console.error('二维码生成错误:', error);
+                    showToast('二维码生成失败', 'error');
+                    return;
+                }
+                
+                // 清空容器并添加生成的二维码
+                uploadQrcode.innerHTML = '';
+                uploadQrcode.appendChild(canvas);
+                
+                // 检查URL参数，如果是移动端上传模式，直接显示上传页面
+                const params = new URLSearchParams(window.location.search);
+                if (params.has('upload') && window.innerWidth < 768) {
+                    showMobileUploadPage();
+                }
+            });
+        }
+
+        // 设置事件监听
+        function setupEventListeners() {
+            // 音频上传模态框控制
+            introAddAudioBtn.addEventListener('click', () => openModal('audio'));
+            addAudioBtn.addEventListener('click', () => openModal('audio'));
+            
+            // 视频上传模态框控制
+            introAddVideoBtn.addEventListener('click', () => openModal('video'));
+            addVideoBtn.addEventListener('click', () => openModal('video'));
+            
+            // 关闭所有模态框
+            closeModalButtons.forEach(button => {
+                button.addEventListener('click', closeAllModals);
+            });
+            
+            // 打开信息模态框
+            infoBtn.addEventListener('click', openInfoModal);
+            
+            // 关闭信息模态框
+            closeInfoModal.addEventListener('click', closeInfoModalFunc);
+            
+            // 点击模态框外部关闭
+            audioUploadModal.addEventListener('click', (e) => {
+                if (e.target === audioUploadModal) {
+                    closeAllModals();
+                }
+            });
+            
+            videoUploadModal.addEventListener('click', (e) => {
+                if (e.target === videoUploadModal) {
+                    closeAllModals();
+                }
+            });
+            
+            infoModal.addEventListener('click', (e) => {
+                if (e.target === infoModal) {
+                    closeInfoModalFunc();
+                }
+            });
+            
+            // 阻止模态框内部点击冒泡
+            document.getElementById('audioModalContent').addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+            
+            document.getElementById('videoModalContent').addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+            
+            infoModalContent.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+            
+            // 表单提交
+            audioUploadForm.addEventListener('submit', (e) => handleFormSubmit(e, 'audio'));
+            videoUploadForm.addEventListener('submit', (e) => handleFormSubmit(e, 'video'));
+            
+            // 音频文件上传区域
+            audioDropArea.addEventListener('click', () => audioFileInput.click());
+            
+            // 视频文件上传区域
+            videoDropArea.addEventListener('click', () => videoFileInput.click());
+            mobileVideoDropArea.addEventListener('click', () => mobileVideoFile.click());
+            
+            // 文件选择
+            audioFileInput.addEventListener('change', () => handleFileSelect('audio'));
+            videoFileInput.addEventListener('change', () => handleFileSelect('video'));
+            mobileVideoFile.addEventListener('change', handleMobileVideoFileSelect);
+            
+            // 拖放功能 - 音频
+            audioDropArea.addEventListener('dragover', handleDragOver);
+            audioDropArea.addEventListener('dragleave', () => handleDragLeave('audio'));
+            audioDropArea.addEventListener('drop', (e) => handleDrop(e, 'audio'));
+            
+            // 拖放功能 - 视频
+            videoDropArea.addEventListener('dragover', handleDragOver);
+            videoDropArea.addEventListener('dragleave', () => handleDragLeave('video'));
+            videoDropArea.addEventListener('drop', (e) => handleDrop(e, 'video'));
+            
+            // 滚动时改变导航栏样式
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('py-2', 'shadow');
+                    header.classList.remove('py-4');
+                } else {
+                    header.classList.add('py-4');
+                    header.classList.remove('py-2', 'shadow');
+                }
+            });
+            
+            // 移动端上传页面控制
+            closeMobileUpload.addEventListener('click', hideMobileUploadPage);
+            
+            // 移动端音视频标签切换
+            mobileAudioTab.addEventListener('click', () => {
+                mobileAudioTab.classList.remove('bg-gray-100', 'text-gray-600');
+                mobileAudioTab.classList.add('bg-primary', 'text-white');
+                mobileVideoTab.classList.remove('bg-secondary', 'text-white');
+                mobileVideoTab.classList.add('bg-gray-100', 'text-gray-600');
+                mobileAudioForm.classList.remove('hidden');
+                mobileVideoForm.classList.add('hidden');
+            });
+            
+            mobileVideoTab.addEventListener('click', () => {
+                mobileVideoTab.classList.remove('bg-gray-100', 'text-gray-600');
+                mobileVideoTab.classList.add('bg-secondary', 'text-white');
+                mobileAudioTab.classList.remove('bg-primary', 'text-white');
+                mobileAudioTab.classList.add('bg-gray-100', 'text-gray-600');
+                mobileAudioForm.classList.add('hidden');
+                mobileVideoForm.classList.remove('hidden');
+            });
+            
+            // 录音功能
+            startRecording.addEventListener('click', toggleRecording);
+            
+            // 移动端表单提交
+            mobileAudioForm.addEventListener('submit', handleMobileAudioFormSubmit);
+            mobileVideoForm.addEventListener('submit', handleMobileVideoFormSubmit);
+        }
+
+        // 处理拖放事件 - 通用
+        function handleDragOver(e) {
+            e.preventDefault();
+            const type = e.currentTarget.id === 'audioDropArea' ? 'audio' : 'video';
+            const dropArea = type === 'audio' ? audioDropArea : videoDropArea;
+            dropArea.classList.add(type === 'audio' ? 'border-primary' : 'border-secondary', `${type === 'audio' ? 'bg-primary' : 'bg-secondary'}/5`);
+        }
+        
+        // 处理拖拽离开事件
+        function handleDragLeave(type) {
+            const dropArea = type === 'audio' ? audioDropArea : videoDropArea;
+            dropArea.classList.remove(type === 'audio' ? 'border-primary' : 'border-secondary', `${type === 'audio' ? 'bg-primary' : 'bg-secondary'}/5`);
+        }
+        
+        // 处理拖放事件
+        function handleDrop(e, type) {
+            e.preventDefault();
+            const dropArea = type === 'audio' ? audioDropArea : videoDropArea;
+            dropArea.classList.remove(type === 'audio' ? 'border-primary' : 'border-secondary', `${type === 'audio' ? 'bg-primary' : 'bg-secondary'}/5`);
+            
+            if (e.dataTransfer.files.length) {
+                const fileInput = type === 'audio' ? audioFileInput : videoFileInput;
+                fileInput.files = e.dataTransfer.files;
+                handleFileSelect(type);
+            }
+        }
+
+        // 打开信息模态框
+        function openInfoModal() {
+            infoModal.classList.remove('opacity-0', 'pointer-events-none');
+            infoModalContent.classList.remove('scale-95');
+            infoModalContent.classList.add('scale-100');
+        }
+
+        // 关闭信息模态框
+        function closeInfoModalFunc() {
+            infoModal.classList.add('opacity-0', 'pointer-events-none');
+            infoModalContent.classList.remove('scale-100');
+            infoModalContent.classList.add('scale-95');
+        }
+
+        // 显示移动端上传页面
+        function showMobileUploadPage() {
+            mobileUploadPage.classList.remove('translate-x-full');
+        }
+
+        // 隐藏移动端上传页面
+        function hideMobileUploadPage() {
+            mobileUploadPage.classList.add('translate-x-full');
+        }
+
+        // 切换录音状态
+        async function toggleRecording() {
+            // 检查是否在本地文件模式下
+            if (isLocalFile) {
+                showToast('录音功能在本地文件模式下可能受限，请使用本地服务器运行', 'error');
+            }
+            
+            if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+                // 停止录音
+                mediaRecorder.stop();
+                startRecording.innerHTML = '<i class="fa fa-microphone text-3xl"></i>';
+                startRecording.classList.remove('bg-red-500');
+                startRecording.classList.add('bg-primary');
+                recordingStatus.classList.add('hidden');
+                
+            } else {
+                // 开始录音
+                try {
+                    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    mediaRecorder = new MediaRecorder(stream);
+                    const audioChunks = [];
+                    
+                    mediaRecorder.addEventListener("dataavailable", event => {
+                        audioChunks.push(event.data);
+                    });
+                    
+                    mediaRecorder.addEventListener("stop", () => {
+                        recordingBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                        const audioUrl = URL.createObjectURL(recordingBlob);
+                        recordingPlayer.src = audioUrl;
+                        recordingPreview.classList.remove('hidden');
+                        
+                        // 停止所有音轨
+                        stream.getTracks().forEach(track => track.stop());
+                        showToast('录音已完成');
+                    });
+                    
+                    mediaRecorder.start();
+                    startRecording.innerHTML = '<i class="fa fa-stop text-3xl"></i>';
+                    startRecording.classList.remove('bg-primary');
+                    startRecording.classList.add('bg-red-500');
+                    recordingStatus.classList.remove('hidden');
+                    recordingPreview.classList.add('hidden');
+                    showToast('开始录音...');
+                    
+                } catch (error) {
+                    console.error('录音权限被拒绝:', error);
+                    showToast('无法访问麦克风，请确保已授予录音权限', 'error');
+                }
+            }
+        }
+
+        // 处理移动端音频表单提交
+        function handleMobileAudioFormSubmit(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('mobileAudioTitle').value;
+            const textContent = document.getElementById('mobileAudioText').value;
+            
+            if (!recordingBlob) {
+                showToast('请先录制一段音频', 'error');
+                return;
+            }
+            
+            showLoading();
+            
+            // 创建一个文件对象
+            const audioFile = new File([recordingBlob], 'recording.wav', { type: 'audio/wav' });
+            
+            // 使用现有的创建卡片函数
+            createMediaCard('audio', title, textContent, audioFile)
+                .then(() => {
+                    // 重置表单并返回
+                    mobileAudioForm.reset();
+                    recordingPreview.classList.add('hidden');
+                    recordingBlob = null;
+                    hideMobileUploadPage();
+                    showToast('你的音频记录已成功提交！', 'success');
+                })
+                .catch(error => {
+                    console.error('提交失败:', error);
+                    showToast('提交失败，请重试', 'error');
+                })
+                .finally(() => {
+                    hideLoading();
+                });
+        }
+
+        // 处理移动端视频文件选择
+        function handleMobileVideoFileSelect() {
+            if (mobileVideoFile.files.length) {
+                const fileName = mobileVideoFile.files[0].name;
+                const dropAreaText = mobileVideoDropArea.querySelector('p');
+                dropAreaText.innerHTML = `已选择: <span class="text-secondary font-medium">${fileName}</span>`;
+                mobileVideoDropArea.classList.add('border-green-500', 'bg-green-50');
+            }
+        }
+
+        // 处理移动端视频表单提交
+        function handleMobileVideoFormSubmit(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('mobileVideoTitle').value;
+            const textContent = document.getElementById('mobileVideoText').value;
+            const file = mobileVideoFile.files[0];
+            
+            if (!file) {
+                showToast('请选择一个视频文件', 'error');
+                return;
+            }
+            
+            showLoading();
+            
+            // 创建视频卡片
+            createMediaCard('video', title, textContent, file)
+                .then(() => {
+                    // 重置表单并返回
+                    mobileVideoForm.reset();
+                    const dropAreaText = mobileVideoDropArea.querySelector('p');
+                    dropAreaText.innerHTML = '点击上传视频文件';
+                    mobileVideoDropArea.classList.remove('border-green-500', 'bg-green-50');
+                    hideMobileUploadPage();
+                    showToast('你的视频记录已成功提交！', 'success');
+                })
+                .catch(error => {
+                    console.error('提交失败:', error);
+                    showToast('提交失败，请重试', 'error');
+                })
+                .finally(() => {
+                    hideLoading();
+                });
+        }
+
+        // 打开上传模态框
+        function openModal(type) {
+            closeAllModals();
+            
+            const modal = type === 'audio' ? audioUploadModal : videoUploadModal;
+            const modalContent = type === 'audio' ? document.getElementById('audioModalContent') : document.getElementById('videoModalContent');
+            
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+            
+            // 重置表单
+            const form = type === 'audio' ? audioUploadForm : videoUploadForm;
+            form.reset();
+            const fileInput = type === 'audio' ? audioFileInput : videoFileInput;
+            fileInput.value = '';
+            updateDropAreaText(type);
+            
+            // 设置焦点
+            const titleInput = type === 'audio' ? document.getElementById('audioTitle') : document.getElementById('videoTitle');
+            titleInput.focus();
+        }
+
+        // 关闭所有模态框
+        function closeAllModals() {
+            // 关闭音频模态框
+            audioUploadModal.classList.add('opacity-0', 'pointer-events-none');
+            document.getElementById('audioModalContent').classList.remove('scale-100');
+            document.getElementById('audioModalContent').classList.add('scale-95');
+            
+            // 关闭视频模态框
+            videoUploadModal.classList.add('opacity-0', 'pointer-events-none');
+            document.getElementById('videoModalContent').classList.remove('scale-100');
+            document.getElementById('videoModalContent').classList.add('scale-95');
+        }
+
+        // 处理文件选择
+        function handleFileSelect(type) {
+            try {
+                const fileInput = type === 'audio' ? audioFileInput : videoFileInput;
+                if (fileInput.files.length) {
+                    const fileName = fileInput.files[0].name;
+                    updateDropAreaText(type, fileName);
+                }
+            } catch (error) {
+                console.error('文件选择错误:', error);
+                showToast('文件操作失败: ' + error.message, 'error');
+            }
+        }
+
+        // 更新上传区域文本
+        function updateDropAreaText(type, fileName = null) {
+            const dropArea = type === 'audio' ? audioDropArea : videoDropArea;
+            const dropAreaText = dropArea.querySelector('p');
+            
+            if (fileName) {
+                dropAreaText.innerHTML = `已选择: <span class="${type === 'audio' ? 'text-primary' : 'text-secondary'} font-medium">${fileName}</span> <span class="text-gray-500">(点击更换)</span>`;
+                dropArea.classList.add('border-green-500', 'bg-green-50');
+            } else {
+                const actionText = type === 'audio' ? 
+                    '拖放音频文件到这里，或<span class="text-primary font-medium">点击上传</span>' : 
+                    '拖放视频文件到这里，或<span class="text-secondary font-medium">点击上传</span>';
+                    
+                dropAreaText.innerHTML = actionText;
+                dropArea.classList.remove('border-green-500', 'bg-green-50');
+            }
+        }
+
+        // 处理表单提交
+        function handleFormSubmit(e, type) {
+            e.preventDefault();
+            
+            const titleInput = type === 'audio' ? document.getElementById('audioTitle') : document.getElementById('videoTitle');
+            const descriptionInput = type === 'audio' ? document.getElementById('audioDescription') : document.getElementById('videoDescription');
+            const fileInput = type === 'audio' ? audioFileInput : videoFileInput;
+            
+            const title = titleInput.value;
+            const description = descriptionInput.value;
+            const file = fileInput.files[0];
+            
+            if (!file) {
+                showToast(`请选择一个${type === 'audio' ? '音频' : '视频'}文件`, 'error');
+                return;
+            }
+            
+            showLoading();
+            
+            // 创建音视频卡片
+            createMediaCard(type, title, description, file)
+                .then(() => {
+                    // 关闭模态框
+                    closeAllModals();
+                    showToast(`${type === 'audio' ? '音频' : '视频'}记录已成功添加！`, 'success');
+                })
+                .catch(error => {
+                    console.error('添加失败:', error);
+                    showToast('添加失败，请重试', 'error');
+                })
+                .finally(() => {
+                    hideLoading();
+                });
+        }
+
+        // 创建音视频卡片
+        function createMediaCard(type, title, description, file) {
+            return new Promise((resolve, reject) => {
+                try {
+                    // 创建唯一ID
+                    const id = `${type}-${Date.now()}`;
+                    
+                    // 读取文件并转换为DataURL
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        try {
+                            const mediaData = e.target.result;
+                            
+                            // 创建媒体对象
+                            const mediaElement = type === 'audio' ? new Audio(mediaData) : document.createElement('video');
+                            if (type === 'video') {
+                                mediaElement.src = mediaData;
+                                mediaElement.controls = true; // 始终显示视频控件
+                                videoFiles[id] = file; // 保存原始视频文件
+                            }
+                            
+                            // 存储媒体元素
+                            if (type === 'audio') {
+                                audioElements[id] = mediaElement;
+                            } else {
+                                videoElements[id] = mediaElement;
+                            }
+                            
+                            // 监听媒体结束事件
+                            mediaElement.addEventListener('ended', () => {
+                                if (currentPlayingId === id && currentMediaType === type) {
+                                    currentPlayingId = null;
+                                    currentMediaType = null;
+                                    updatePlayButtonState(id, type, false);
+                                }
+                            });
+                            
+                            // 创建卡片元素
+                            const card = document.createElement('div');
+                            card.id = id;
+                            card.className = 'bg-white/90 bg-blur rounded-xl overflow-hidden media-card-shadow hover:media-card-shadow-hover transition-all duration-300 transform hover:-translate-y-1 group border border-white/50 opacity-0 scale-95';
+                            card.dataset.title = title;
+                            card.dataset.description = description;
+                            
+                            // 随机背景颜色 - 更偏向历史感和人文气息的配色
+                            const colors = [
+                                'from-purple-50 to-indigo-50',
+                                'from-pink-50 to-rose-50',
+                                'from-blue-50 to-cyan-50',
+                                'from-amber-50 to-yellow-50',
+                                'from-emerald-50 to-teal-50'
+                            ];
+                            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                            
+                            // 卡片内容 - 根据类型有所不同
+                            let cardContent = '';
+                            
+                            if (type === 'audio') {
+                                // 音频卡片内容
+                                cardContent = `
+                                    <div class="gradient-bg ${randomColor} p-6 pb-2">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <h3 class="font-bold text-xl text-dark mb-1 group-hover:text-primary transition-colors font-serif">${title}</h3>
+                                                <p class="text-gray-600 text-sm line-clamp-2">${description || '无描述'}</p>
+                                            </div>
+                                            <button class="delete-btn text-gray-400 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100">
+                                                <i class="fa fa-trash-o text-xl"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="p-6 pt-4">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center space-x-4">
+                                                <button class="play-btn w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-md hover:shadow-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105">
+                                                    <i class="fa fa-play text-lg"></i>
+                                                </button>
+                                                <div class="audio-info">
+                                                    <div class="text-sm text-gray-500">
+                                                        <span class="current-time">00:00</span> / <span class="duration">--:--</span>
+                                                    </div>
+                                                    <div class="w-48 h-1 bg-gray-200 rounded-full mt-1 overflow-hidden">
+                                                        <div class="progress-bar h-full bg-primary w-0 transition-all duration-150"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="audio-wave hidden md:flex items-end justify-center space-x-1 h-6">
+                                                <div class="wave-bar w-1 bg-primary/70 rounded-t-sm wave-animation" style="animation-delay: 0ms; height: 30%;"></div>
+                                                <div class="wave-bar w-1 bg-primary/70 rounded-t-sm wave-animation" style="animation-delay: 100ms; height: 70%;"></div>
+                                                <div class="wave-bar w-1 bg-primary/70 rounded-t-sm wave-animation" style="animation-delay: 200ms; height: 50%;"></div>
+                                                <div class="wave-bar w-1 bg-primary/70 rounded-t-sm wave-animation" style="animation-delay: 300ms; height: 90%;"></div>
+                                                <div class="wave-bar w-1 bg-primary/70 rounded-t-sm wave-animation" style="animation-delay: 400ms; height: 40%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            } else {
+                                // 视频卡片内容 - 包含完整的HTML5视频播放器
+                                cardContent = `
+                                    <div class="video-player-container">
+                                        <video id="${id}-player" class="w-full" controls poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225' class='video-placeholder' %3E%3C/svg%3E">
+                                            <source src="${mediaData}" type="${file.type}">
+                                            您的浏览器不支持HTML5视频播放
+                                        </video>
+                                    </div>
+                                    <div class="p-6">
+                                        <div class="flex justify-between items-start mb-4">
+                                            <div>
+                                                <h3 class="font-bold text-xl text-dark mb-1 group-hover:text-secondary transition-colors font-serif">${title}</h3>
+                                                <p class="text-gray-600 text-sm line-clamp-2">${description || '无描述'}</p>
+                                            </div>
+                                            <button class="delete-btn text-gray-400 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100">
+                                                <i class="fa fa-trash-o text-xl"></i>
+                                            </button>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center space-x-4">
+                                                <button class="play-btn w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all duration-300 transform hover:scale-105">
+                                                    <i class="fa fa-play text-lg"></i>
+                                                </button>
+                                                <div class="video-info">
+                                                    <div class="text-sm text-gray-500">
+                                                        <span class="current-time">00:00</span> / <span class="duration">--:--</span>
+                                                    </div>
+                                                    <div class="w-48 h-1 bg-gray-200 rounded-full mt-1 overflow-hidden">
+                                                        <div class="progress-bar h-full bg-secondary w-0 transition-all duration-150"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            }
+                            
+                            card.innerHTML = cardContent;
+                            
+                            // 添加到对应的容器
+                            const container = type === 'audio' ? audioCardsContainer : videoCardsContainer;
+                            container.appendChild(card);
+                            
+                            // 触发动画
+                            setTimeout(() => {
+                                card.classList.remove('opacity-0', 'scale-95');
+                                card.classList.add('opacity-100', 'scale-100');
+                            }, 50);
+                            
+                            checkEmptyState(type);
+                            
+                            // 保存到本地存储 - 视频需要保存文件名
+                            const saveData = {
+                                title,
+                                description,
+                                mediaData,
+                                createdAt: new Date().toISOString()
+                            };
+                            if (type === 'video') {
+                                saveData.filename = file.name;
+                            }
+                            saveMediaCard(id, type, saveData);
+                            
+                            // 为视频关联播放器
+                            if (type === 'video') {
+                                const videoPlayer = document.getElementById(`${id}-player`);
+                                if (videoPlayer) {
+                                    // 将DOM中的video元素与我们的视频元素对象关联
+                                    videoElements[id] = videoPlayer;
+                                    
+                                    // 监听视频事件以更新进度条
+                                    videoPlayer.addEventListener('timeupdate', () => {
+                                        const progressBar = card.querySelector('.progress-bar');
+                                        const currentTimeElement = card.querySelector('.current-time');
+                                        
+                                        if (videoPlayer.duration) {
+                                            const percent = (videoPlayer.currentTime / videoPlayer.duration) * 100;
+                                            progressBar.style.width = `${percent}%`;
+                                            currentTimeElement.textContent = formatTime(videoPlayer.currentTime);
+                                        }
+                                    });
+                                    
+                                    // 视频元数据加载完成后更新时长
+                                    videoPlayer.addEventListener('loadedmetadata', () => {
+                                        const durationElement = card.querySelector('.duration');
+                                        durationElement.textContent = formatTime(videoPlayer.duration);
+                                    });
+                                    
+                                    // 视频播放状态变化时更新按钮
+                                    videoPlayer.addEventListener('play', () => {
+                                        currentPlayingId = id;
+                                        currentMediaType = type;
+                                        updatePlayButtonState(id, type, true);
+                                    });
+                                    
+                                    videoPlayer.addEventListener('pause', () => {
+                                        if (currentPlayingId === id && currentMediaType === type) {
+                                            currentPlayingId = null;
+                                            currentMediaType = null;
+                                            updatePlayButtonState(id, type, false);
+                                        }
+                                    });
+                                    
+                                    videoPlayer.addEventListener('ended', () => {
+                                        currentPlayingId = null;
+                                        currentMediaType = null;
+                                        updatePlayButtonState(id, type, false);
+                                    });
+                                }
+                            }
+                            
+                            // 绑定播放按钮事件
+                            const playBtn = card.querySelector('.play-btn');
+                            playBtn.addEventListener('click', (e) => {
+                                e.stopPropagation();
+                                togglePlay(id, type);
+                            });
+                            
+                            // 绑定删除按钮事件
+                            const deleteBtn = card.querySelector('.delete-btn');
+                            deleteBtn.addEventListener('click', (e) => {
+                                e.stopPropagation();
+                                deleteMediaCard(id, type);
+                            });
+                            
+                            // 计算媒体时长
+                            if (type === 'audio') {
+                                mediaElement.addEventListener('loadedmetadata', () => {
+                                    const durationElement = card.querySelector('.duration');
+                                    durationElement.textContent = formatTime(mediaElement.duration);
+                                });
+                                
+                                // 更新进度条
+                                mediaElement.addEventListener('timeupdate', () => {
+                                    const progressBar = card.querySelector('.progress-bar');
+                                    const currentTimeElement = card.querySelector('.current-time');
+                                    
+                                    const percent = (mediaElement.currentTime / mediaElement.duration) * 100;
+                                    progressBar.style.width = `${percent}%`;
+                                    currentTimeElement.textContent = formatTime(mediaElement.currentTime);
+                                });
+                            }
+                            
+                            // 点击卡片事件 - 视频直接控制播放
+                            card.addEventListener('click', (e) => {
+                                // 如果点击的是删除按钮、播放按钮或视频控件，不触发卡片点击
+                                if (!e.target.closest('.delete-btn') && 
+                                    !e.target.closest('.play-btn') && 
+                                    !(type === 'video' && e.target.closest('video'))) {
+                                    togglePlay(id, type);
+                                }
+                            });
+                            
+                            resolve();
+                        } catch (error) {
+                            console.error('创建媒体卡片失败:', error);
+                            reject(error);
+                        }
+                    };
+                    
+                    reader.onerror = function(error) {
+                        console.error('文件读取失败:', error);
+                        reject(error);
+                    };
+                    
+                    reader.readAsDataURL(file);
+                } catch (error) {
+                    console.error('创建媒体卡片时发生错误:', error);
+                    reject(error);
+                }
+            });
+        }
+
+        // 切换播放/暂停状态
+        function togglePlay(id, type) {
+            const mediaElement = type === 'audio' ? audioElements[id] : videoElements[id];
+            if (!mediaElement) {
+                showToast('媒体文件不存在', 'error');
+                return;
+            }
+            
+            try {
+                // 如果有正在播放的其他媒体，先暂停
+                if (currentPlayingId && (currentPlayingId !== id || currentMediaType !== type)) {
+                    pauseMedia(currentPlayingId, currentMediaType);
+                }
+                
+                if (mediaElement.paused) {
+                    // 播放当前媒体
+                    mediaElement.play()
+                        .then(() => {
+                            currentPlayingId = id;
+                            currentMediaType = type;
+                            updatePlayButtonState(id, type, true);
+                            
+                            // 显示波形动画（仅音频）
+                            if (type === 'audio') {
+                                showWaveAnimation(id, true);
+                            }
+                        })
+                        .catch(error => {
+                            console.error('播放失败:', error);
+                            showToast('播放失败: ' + error.message, 'error');
+                        });
+                } else {
+                    // 暂停当前媒体
+                    mediaElement.pause();
+                    currentPlayingId = null;
+                    currentMediaType = null;
+                    updatePlayButtonState(id, type, false);
+                    
+                    // 隐藏波形动画（仅音频）
+                    if (type === 'audio') {
+                        showWaveAnimation(id, false);
+                    }
+                }
+            } catch (error) {
+                console.error('播放控制失败:', error);
+                showToast('操作失败，请重试', 'error');
+            }
+        }
+
+        // 暂停媒体
+        function pauseMedia(id, type) {
+            const mediaElement = type === 'audio' ? audioElements[id] : videoElements[id];
+            if (mediaElement && !mediaElement.paused) {
+                mediaElement.pause();
+                updatePlayButtonState(id, type, false);
+                
+                // 隐藏波形动画（仅音频）
+                if (type === 'audio') {
+                    showWaveAnimation(id, false);
+                }
+            }
+        }
+
+        // 更新播放按钮状态
+        function updatePlayButtonState(id, type, isPlaying) {
+            const card = document.getElementById(id);
+            if (!card) return;
+            
+            const playBtn = card.querySelector('.play-btn');
+            const icon = playBtn.querySelector('i');
+            
+            if (isPlaying) {
+                icon.classList.remove('fa-play');
+                icon.classList.add('fa-pause');
+            } else {
+                icon.classList.remove('fa-pause');
+                icon.classList.add('fa-play');
+            }
+        }
+
+        // 显示/隐藏波形动画（仅音频）
+        function showWaveAnimation(id, show) {
+            const card = document.getElementById(id);
+            if (!card) return;
+            
+            const waveBars = card.querySelectorAll('.wave-bar');
+            waveBars.forEach(bar => {
+                if (show) {
+                    bar.style.animationPlayState = 'running';
+                } else {
+                    bar.style.animationPlayState = 'paused';
+                }
+            });
+        }
+
+        // 删除媒体卡片
+        function deleteMediaCard(id, type) {
+            if (confirm(`确定要删除这个${type === 'audio' ? '音频' : '视频'}记录吗？`)) {
+                try {
+                    // 暂停并移除媒体
+                    const mediaElement = type === 'audio' ? audioElements[id] : videoElements[id];
+                    if (mediaElement) {
+                        mediaElement.pause();
+                        if (type === 'audio') {
+                            delete audioElements[id];
+                        } else {
+                            delete videoElements[id];
+                            delete videoFiles[id]; // 同时删除原始视频文件引用
+                        }
+                        
+                        if (currentPlayingId === id && currentMediaType === type) {
+                            currentPlayingId = null;
+                            currentMediaType = null;
+                        }
+                    }
+                    
+                    // 从DOM中移除卡片
+                    const card = document.getElementById(id);
+                    if (card) {
+                        // 添加删除动画
+                        card.classList.add('opacity-0', 'scale-95');
+                        setTimeout(() => {
+                            card.remove();
+                            checkEmptyState(type);
+                        }, 300);
+                    }
+                    
+                    // 从本地存储中删除
+                    removeMediaCardFromStorage(id, type);
+                    
+                    showToast(`${type === 'audio' ? '音频' : '视频'}记录已删除`, 'success');
+                } catch (error) {
+                    console.error('删除失败:', error);
+                    showToast('删除失败，请重试', 'error');
+                }
+            }
+        }
+
+        // 格式化时间（秒 -> mm:ss）
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return '--:--';
+            
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // 检查空状态
+        function checkEmptyState(type) {
+            const container = type === 'audio' ? audioCardsContainer : videoCardsContainer;
+            const emptyState = type === 'audio' ? audioEmptyState : videoEmptyState;
+            const cards = container.querySelectorAll(`div[id^="${type}-"]`);
+            
+            if (cards.length === 0) {
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+            }
+        }
+
+        // 保存媒体卡片到本地存储
+        function saveMediaCard(id, type, data) {
+            try {
+                // 检查本地存储是否可用
+                if (!checkLocalStorageAvailability()) return;
+                
+                // 先获取现有数据
+                const audioCards = JSON.parse(localStorage.getItem('audioCards') || '{}');
+                const videoCards = JSON.parse(localStorage.getItem('videoCards') || '{}');
+                
+                // 根据类型保存到不同的存储键
+                if (type === 'audio') {
+                    audioCards[id] = data;
+                    localStorage.setItem('audioCards', JSON.stringify(audioCards));
+                } else {
+                    videoCards[id] = data;
+                    localStorage.setItem('videoCards', JSON.stringify(videoCards));
+                }
+            } catch (error) {
+                console.error('保存到本地存储失败:', error);
+                showToast('无法保存数据，请检查浏览器设置', 'error');
+            }
+        }
+
+        // 从本地存储加载音频卡片
+        function loadAudioCards() {
+            try {
+                // 检查本地存储是否可用
+                if (!checkLocalStorageAvailability()) return;
+                
+                const cards = JSON.parse(localStorage.getItem('audioCards') || '{}');
+                
+                // 按创建时间排序
+                const sortedIds = Object.keys(cards).sort((a, b) => {
+                    return new Date(cards[b].createdAt) - new Date(cards[a].createdAt);
+                });
+                
+                // 批量加载卡片，添加延迟避免UI阻塞
+                let delay = 0;
+                sortedIds.forEach(id => {
+                    setTimeout(() => {
+                        const { title, description, mediaData } = cards[id];
+                        
+                        // 创建音频对象
+                        const audio = new Audio(mediaData);
+                        audioElements[id] = audio;
+                        
+                        // 创建卡片元素
+                        const card = document.createElement('div');
+                        card.id = id;
+                        card.className = 'bg-white/90 bg-blur rounded-xl overflow-hidden media-card-shadow hover:media-card-shadow-hover transition-all duration-300 transform hover:-translate-y-1 group border border-white/50 opacity-0 scale-95';
+                        
+                        // 随机背景颜色
+                        const colors = [
+                            'from-purple-50 to-indigo-50',
+                            'from-pink-50 to-rose-50',
+                            'from-blue-50 to-cyan-50',
+                            'from-amber-50 to-yellow-50',
+                            'from-emerald-50 to-teal-50'
+                        ];
+                        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                        
+                        // 卡片内容
+                        card.innerHTML = `
+                            <div class="gradient-bg ${randomColor} p-6 pb-2">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="font-bold text-xl text-dark mb-1 group-hover:text-primary transition-colors font-serif">${title}</h3>
+                                        <p class="text-gray-600 text-sm line-clamp-2">${description || '无描述'}</p>
+                                    </div>
+                                    <button class="delete-btn text-gray-400 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100">
+                                        <i class="fa fa-trash-o text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-6 pt-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-4">
+                                        <button class="play-btn w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-md hover:shadow-lg hover:bg-primary/90 transition-all duration-300 transform hover:scale-105">
+                                            <i class="fa fa-play text-lg"></i>
+                                        </button>
+                                        <div class="audio-info">
+                                            <div class="text-sm text-gray-500">
+                                                <span class="current-time">00:00</span> / <span class="duration">--:--</span>
+                                            </div>
+                                            <div class="w-48 h-1 bg-gray-200 rounded-full mt-1 overflow-hidden">
+                                                <div class="progress-bar h-full bg-primary w-0 transition-all duration-150"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="audio-wave hidden md:flex items-end justify-center space-x-1 h-6">
+                                        <div class="wave-bar w-1 bg-primary/70 rounded-t-sm wave-animation" style="animation-delay: 0ms; height: 30%; animation-play-state: paused;"></div>
+                                        <div class="wave-bar w-1 bg-primary/70 rounded-t-sm wave-animation" style="animation-delay: 100ms; height: 70%; animation-play-state: paused;"></div>
+                                        <div class="wave-bar w-1 bg-primary/70 rounded-t-sm wave-animation" style="animation-delay: 200ms; height: 50%; animation-play-state: paused;"></div>
+                                        <div class="wave-bar w-1 bg-primary/70 rounded-t-sm wave-animation" style="animation-delay: 300ms; height: 90%; animation-play-state: paused;"></div>
+                                        <div class="wave-bar w-1 bg-primary/70 rounded-t-sm wave-animation" style="animation-delay: 400ms; height: 40%; animation-play-state: paused;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        
+                        // 添加到容器
+                        audioCardsContainer.appendChild(card);
+                        
+                        // 触发动画
+                        setTimeout(() => {
+                            card.classList.remove('opacity-0', 'scale-95');
+                            card.classList.add('opacity-100', 'scale-100');
+                        }, 50);
+                        
+                        // 绑定播放按钮事件
+                        const playBtn = card.querySelector('.play-btn');
+                        playBtn.addEventListener('click', () => togglePlay(id, 'audio'));
+                        
+                        // 绑定删除按钮事件
+                        const deleteBtn = card.querySelector('.delete-btn');
+                        deleteBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            deleteMediaCard(id, 'audio');
+                        });
+                        
+                        // 计算音频时长
+                        audio.addEventListener('loadedmetadata', () => {
+                            const durationElement = card.querySelector('.duration');
+                            durationElement.textContent = formatTime(audio.duration);
+                        });
+                        
+                        // 更新进度条
+                        audio.addEventListener('timeupdate', () => {
+                            const progressBar = card.querySelector('.progress-bar');
+                            const currentTimeElement = card.querySelector('.current-time');
+                            
+                            const percent = (audio.currentTime / audio.duration) * 100;
+                            progressBar.style.width = `${percent}%`;
+                            currentTimeElement.textContent = formatTime(audio.currentTime);
+                        });
+                        
+                        // 监听音频结束事件
+                        audio.addEventListener('ended', () => {
+                            if (currentPlayingId === id && currentMediaType === 'audio') {
+                                currentPlayingId = null;
+                                currentMediaType = null;
+                                updatePlayButtonState(id, 'audio', false);
+                                showWaveAnimation(id, false);
+                            }
+                        });
+                        
+                        // 点击卡片也可以播放/暂停
+                        card.addEventListener('click', (e) => {
+                            // 如果点击的是删除按钮或播放按钮，不触发卡片点击
+                            if (!e.target.closest('.delete-btn') && !e.target.closest('.play-btn')) {
+                                togglePlay(id, 'audio');
+                            }
+                        });
+                    }, delay);
+                    
+                    delay += 100; // 每个卡片延迟100ms加载，避免UI阻塞
+                });
+                
+                checkEmptyState('audio');
+            } catch (error) {
+                console.error('加载音频卡片失败:', error);
+                showToast('加载音频记录失败', 'error');
+            }
+        }
+
+        // 从本地存储加载视频卡片
+        function loadVideoCards() {
+            try {
+                // 检查本地存储是否可用
+                if (!checkLocalStorageAvailability()) return;
+                
+                const cards = JSON.parse(localStorage.getItem('videoCards') || '{}');
+                
+                // 按创建时间排序
+                const sortedIds = Object.keys(cards).sort((a, b) => {
+                    return new Date(cards[b].createdAt) - new Date(cards[a].createdAt);
+                });
+                
+                // 批量加载卡片，添加延迟避免UI阻塞
+                let delay = 0;
+                sortedIds.forEach(id => {
+                    setTimeout(() => {
+                        const { title, description, mediaData, filename } = cards[id];
+                        
+                        // 创建卡片元素
+                        const card = document.createElement('div');
+                        card.id = id;
+                        card.className = 'bg-white/90 bg-blur rounded-xl overflow-hidden media-card-shadow hover:media-card-shadow-hover transition-all duration-300 transform hover:-translate-y-1 group border border-white/50 opacity-0 scale-95';
+                        
+                        // 卡片内容 - 包含HTML5视频播放器
+                        card.innerHTML = `
+                            <div class="video-player-container">
+                                <video id="${id}-player" class="w-full" controls poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225' class='video-placeholder' %3E%3C/svg%3E">
+                                    <source src="${mediaData}" type="${getMimeTypeFromDataUrl(mediaData)}">
+                                    您的浏览器不支持HTML5视频播放
+                                </video>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h3 class="font-bold text-xl text-dark mb-1 group-hover:text-secondary transition-colors font-serif">${title}</h3>
+                                        <p class="text-gray-600 text-sm line-clamp-2">${description || '无描述'}</p>
+                                    </div>
+                                    <button class="delete-btn text-gray-400 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100">
+                                        <i class="fa fa-trash-o text-xl"></i>
+                                    </button>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-4">
+                                        <button class="play-btn w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center shadow-md hover:shadow-lg hover:bg-secondary/90 transition-all duration-300 transform hover:scale-105">
+                                            <i class="fa fa-play text-lg"></i>
+                                        </button>
+                                        <div class="video-info">
+                                            <div class="text-sm text-gray-500">
+                                                <span class="current-time">00:00</span> / <span class="duration">--:--</span>
+                                            </div>
+                                            <div class="w-48 h-1 bg-gray-200 rounded-full mt-1 overflow-hidden">
+                                                <div class="progress-bar h-full bg-secondary w-0 transition-all duration-150"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        
+                        // 添加到容器
+                        videoCardsContainer.appendChild(card);
+                        
+                        // 触发动画
+                        setTimeout(() => {
+                            card.classList.remove('opacity-0', 'scale-95');
+                            card.classList.add('opacity-100', 'scale-100');
+                        }, 50);
+                        
+                        // 获取视频元素并设置事件监听
+                        const videoPlayer = document.getElementById(`${id}-player`);
+                        if (videoPlayer) {
+                            // 存储视频元素引用
+                            videoElements[id] = videoPlayer;
+                            
+                            // 还原视频文件（从dataURL转换回File对象）
+                            try {
+                                const byteString = atob(mediaData.split(',')[1]);
+                                const mimeString = getMimeTypeFromDataUrl(mediaData);
+                                const ab = new ArrayBuffer(byteString.length);
+                                const ia = new Uint8Array(ab);
+                                for (let i = 0; i < byteString.length; i++) {
+                                    ia[i] = byteString.charCodeAt(i);
+                                }
+                                const blob = new Blob([ab], { type: mimeString });
+                                videoFiles[id] = new File([blob], filename || 'video.mp4', { type: mimeString });
+                            } catch (error) {
+                                console.error('还原视频文件失败:', error);
+                            }
+                            
+                            // 监听视频事件以更新进度条
+                            videoPlayer.addEventListener('timeupdate', () => {
+                                const progressBar = card.querySelector('.progress-bar');
+                                const currentTimeElement = card.querySelector('.current-time');
+                                
+                                if (videoPlayer.duration) {
+                                    const percent = (videoPlayer.currentTime / videoPlayer.duration) * 100;
+                                    progressBar.style.width = `${percent}%`;
+                                    currentTimeElement.textContent = formatTime(videoPlayer.currentTime);
+                                }
+                            });
+                            
+                            // 视频元数据加载完成后更新时长
+                            videoPlayer.addEventListener('loadedmetadata', () => {
+                                const durationElement = card.querySelector('.duration');
+                                durationElement.textContent = formatTime(videoPlayer.duration);
+                            });
+                            
+                            // 视频播放状态变化时更新按钮
+                            videoPlayer.addEventListener('play', () => {
+                                currentPlayingId = id;
+                                currentMediaType = 'video';
+                                updatePlayButtonState(id, 'video', true);
+                            });
+                            
+                            videoPlayer.addEventListener('pause', () => {
+                                if (currentPlayingId === id && currentMediaType === 'video') {
+                                    currentPlayingId = null;
+                                    currentMediaType = null;
+                                    updatePlayButtonState(id, 'video', false);
+                                }
+                            });
+                            
+                            videoPlayer.addEventListener('ended', () => {
+                                currentPlayingId = null;
+                                currentMediaType = null;
+                                updatePlayButtonState(id, 'video', false);
+                            });
+                        }
+                        
+                        // 绑定播放按钮事件
+                        const playBtn = card.querySelector('.play-btn');
+                        playBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            togglePlay(id, 'video');
+                        });
+                        
+                        // 绑定删除按钮事件
+                        const deleteBtn = card.querySelector('.delete-btn');
+                        deleteBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            deleteMediaCard(id, 'video');
+                        });
+                        
+                        // 点击卡片事件
+                        card.addEventListener('click', (e) => {
+                            // 如果点击的是删除按钮、播放按钮或视频控件，不触发卡片点击
+                            if (!e.target.closest('.delete-btn') && 
+                                !e.target.closest('.play-btn') && 
+                                !e.target.closest('video')) {
+                                togglePlay(id, 'video');
+                            }
+                        });
+                    }, delay);
+                    
+                    delay += 100; // 每个卡片延迟100ms加载，避免UI阻塞
+                });
+                
+                checkEmptyState('video');
+            } catch (error) {
+                console.error('加载视频卡片失败:', error);
+                showToast('加载视频记录失败', 'error');
+            }
+        }
+
+        // 从DataURL获取MIME类型
+        function getMimeTypeFromDataUrl(dataUrl) {
+            const matches = dataUrl.match(/^data:([^;]+);base64,/);
+            return matches ? matches[1] : 'application/octet-stream';
+        }
+
+        // 从本地存储中删除媒体卡片
+        function removeMediaCardFromStorage(id, type) {
+            try {
+                // 检查本地存储是否可用
+                if (!checkLocalStorageAvailability()) return;
+                
+                if (type === 'audio') {
+                    const cards = JSON.parse(localStorage.getItem('audioCards') || '{}');
+                    if (cards[id]) {
+                        delete cards[id];
+                        localStorage.setItem('audioCards', JSON.stringify(cards));
+                    }
+                } else {
+                    const cards = JSON.parse(localStorage.getItem('videoCards') || '{}');
+                    if (cards[id]) {
+                        delete cards[id];
+                        localStorage.setItem('videoCards', JSON.stringify(cards));
+                    }
+                }
+            } catch (error) {
+                console.error('从本地存储删除失败:', error);
+                showToast('删除数据失败', 'error');
+            }
+        }
+    </script>
+    
+
